@@ -3,6 +3,7 @@
 
 require "../manager/Manager.php";
 require "../manager/ArticleManager.php";
+require "../manager/CommentManager.php";
 
 
 if ($_SERVER['REQUEST_URI'] == '/module3-php/') {
@@ -24,10 +25,10 @@ if ($_SERVER['REQUEST_URI'] == '/module3-php/') {
     $controller = new EditArticleController();
     $controller->edit();
 
-} else if ($_SERVER['REQUEST_URI'] == '/module3-php/updated') {
-    require_once("controller/UpdatedController.php");
-    $controller = new UpdatedController();
-    $controller->pageTest();
+} else if ($_SERVER['REQUEST_URI'] == '/module3-php/view_article') {
+    require_once("../controller/ViewArticleController.php");
+    $controller = new ViewArticleController();
+    $controller->view();
 }
 else {
     echo "test";

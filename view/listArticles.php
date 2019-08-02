@@ -34,6 +34,10 @@
                 <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
                 <input type="submit" value="EDIT">
             </form>
+            <form method="post" action="http://localhost:8888/module3-php/view_article">
+                <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
+                <input type="submit" value="VIEW"> 
+            </form>
             <hr>
 <?php endforeach; ?>
     </body>
