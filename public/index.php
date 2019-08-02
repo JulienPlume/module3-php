@@ -4,7 +4,9 @@
 require "../manager/Manager.php";
 require "../manager/ArticleManager.php";
 require "../manager/CommentManager.php";
+require "../manager/UserManager.php";
 
+    session_start();
 
 if ($_SERVER['REQUEST_URI'] == '/module3-php/') {
     require_once("../controller/ListArticlesController.php");
@@ -29,6 +31,11 @@ if ($_SERVER['REQUEST_URI'] == '/module3-php/') {
     require_once("../controller/ViewArticleController.php");
     $controller = new ViewArticleController();
     $controller->view();
+
+} else if ($_SERVER['REQUEST_URI'] == '/module3-php/login') {
+    require_once("../controller/LoginController.php");
+    $controller = new LoginController();
+    $controller->login();
 }
 else {
     echo "test";
