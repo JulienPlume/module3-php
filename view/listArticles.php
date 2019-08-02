@@ -26,6 +26,10 @@
             seo
                 <?=$article['seo']?>
             </h2>
+            <form method="post" action="http://localhost:8888/module3-php/delete">
+                <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
+                <input type="submit" value="delete">
+            </form>
             <hr>
 <?php endforeach; ?>
     </body>

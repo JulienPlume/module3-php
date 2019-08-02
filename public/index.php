@@ -15,9 +15,9 @@ if ($_SERVER['REQUEST_URI'] == '/module3-php/') {
     $controller->AddArticle();
 
 } else if ($_SERVER['REQUEST_URI'] == '/module3-php/delete') {
-    require_once("controller/DeleteController.php");
-    $controller = new DeleteController();
-    $controller->pageTest();
+    require_once("../controller/DeleteArticleController.php");
+    $controller = new DeleteArticleController();
+    $controller->delete();
 
 } else if ($_SERVER['REQUEST_URI'] == '/module3-php/edit') {
     require_once("controller/EditController.php");
@@ -31,6 +31,7 @@ if ($_SERVER['REQUEST_URI'] == '/module3-php/') {
 }
 else {
     echo "test";
+    header('location: /module3-php/');
 }
 
 

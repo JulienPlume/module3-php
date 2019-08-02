@@ -25,4 +25,9 @@ class ArticleManager extends Manager
 
         return $stmt->fetchAll();
     }
+    public function delete()
+    {
+        $pdo = $this->getPDO();
+        $stat = $pdo->query( "DELETE FROM article WHERE id ='".$_POST['article_id']."'");
+    }
 }
