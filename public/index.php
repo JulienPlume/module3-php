@@ -36,8 +36,18 @@ if ($_SERVER['REQUEST_URI'] == '/module3-php/') {
     require_once("../controller/LoginController.php");
     $controller = new LoginController();
     $controller->login();
-}
-else {
+
+} else if ($_SERVER['REQUEST_URI'] == '/module3-php/admin') {
+    require_once("../controller/AdminController.php");
+    $controller = new AdminController();
+    $controller->admin();
+
+} else if ($_SERVER['REQUEST_URI'] == '/module3-php/logout') {
+    require_once("../controller/LogoutController.php");
+    $controller = new LogoutController();
+    $controller->logout();
+
+} else {
     echo "test";
     header('location: /module3-php/');
 }

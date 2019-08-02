@@ -3,6 +3,8 @@
         <title>List articles</title>
     </head>
     <body>
+    <a href="http://localhost:8888/module3-php/admin">admin interface</a>
+    <a href="http://localhost:8888/module3-php/login">login interface</a>
         <h1>listing des articles</h1>
 
         <?php foreach($articles as $article): ?>
