@@ -30,4 +30,33 @@ class ArticleManager extends Manager
         $pdo = $this->getPDO();
         $stat = $pdo->query( "DELETE FROM article WHERE id ='".$_POST['article_id']."'");
     }
+
+        public function edit()
+    {
+        $pdo = $this->getPDO();
+        $stmt = $pdo->query( "UPDATE
+                article
+            SET
+                date = NOW(),
+                title = '".$_POST['title']."',
+                subtitle = '".$_POST['subtitle']."',
+                content = '".$_POST['content']."',
+                category = '".$_POST['category']."',
+                seo = '".$_POST['seo']."'
+        WHERE       
+            id = '".$_POST['article_id']."'
+        ");
+        //$stmt->execute();
+        echo $_POST['title'];
+        echo $_POST['content'];
+    }
+
+    public function getArticleWithId($article_id)
+    {
+        $pdo = $this->getPDO();
+        $stmt = $pdo->query( "SELECT * FROM article
+        WHERE id = '".$article_id."'");
+
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
 }

@@ -20,9 +20,9 @@ if ($_SERVER['REQUEST_URI'] == '/module3-php/') {
     $controller->delete();
 
 } else if ($_SERVER['REQUEST_URI'] == '/module3-php/edit') {
-    require_once("controller/EditController.php");
-    $controller = new EditController();
-    $controller->editorPage();
+    require_once("../controller/EditArticleController.php");
+    $controller = new EditArticleController();
+    $controller->edit();
 
 } else if ($_SERVER['REQUEST_URI'] == '/module3-php/updated') {
     require_once("controller/UpdatedController.php");
