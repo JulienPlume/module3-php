@@ -13,6 +13,7 @@ class LoginController
                 echo "login error";
             } else {
                 if (password_verify($_POST['password'], $user['password'])) {
+                    // session_start ();
                     $_SESSION['auth'] = $user;
                     header('location: http://localhost:8888/project3/admin');
                 } else echo "password not ok";

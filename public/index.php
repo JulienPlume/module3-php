@@ -41,7 +41,6 @@ if ($_SERVER['REQUEST_URI'] == '/module3-php/') {
     require_once("../controller/AdminController.php");
     $controller = new AdminController();
     $controller->admin();
-
 } else if ($_SERVER['REQUEST_URI'] == '/module3-php/logout') {
     require_once("../controller/LogoutController.php");
     $controller = new LogoutController();

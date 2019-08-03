@@ -5,5 +5,6 @@
     <body>
     <h1>
     hello admin !</h1>
-<a href="http://localhost:8888/project3/logout">Logout</a>
+<a href="http://localhost:8888/module3-php/logout">Logout</a>
+
     </body>
