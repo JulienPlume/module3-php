@@ -5,6 +5,7 @@ require "../manager/Manager.php";
 require "../manager/ArticleManager.php";
 require "../manager/CommentManager.php";
 require "../manager/UserManager.php";
+require "../services/Slugify.php";
 
     session_start();
 

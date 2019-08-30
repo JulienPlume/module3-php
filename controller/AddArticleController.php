@@ -5,10 +5,12 @@ class AddArticleController
 
         // get
         if (isset($_POST['submit'])) {
-            // POST
+
+            $slugify = new Slugify();
+            $slug = $slugify->slug($_POST['title']);
+
             $manager = new ArticleManager();
-            $manager->add();
-            echo "bouton clique";
+            $manager->add($slug);
 
             header('location: /module3-php/');
 

@@ -1,7 +1,7 @@
 <?php
 class ArticleManager extends Manager
 {
-    public function add()
+    public function add($slug)
     {
         $pdo = $this->getPDO();
         $stmt = $pdo->query("INSERT INTO 
@@ -11,7 +11,8 @@ class ArticleManager extends Manager
             subtitle = '".$_POST['subtitle']."',
             category = '".$_POST['category']."',
             seo = '".$_POST['seo']."',
-            content = '".$_POST['content']."'
+            content = '".$_POST['content']."',
+            slug = '".$slug."'
             
             ");
     }
