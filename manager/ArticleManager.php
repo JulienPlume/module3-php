@@ -27,7 +27,7 @@ class ArticleManager extends Manager
         $pdo = $this->getPDO();
         $stmt = $pdo->query("DELETE FROM article WHERE id = '".$_POST['article_id']."'");
     }
-    public function edit()
+    public function edit($slug)
     {
         $pdo = $this->getPDO();
         $pdo->query("UPDATE 
@@ -37,7 +37,8 @@ class ArticleManager extends Manager
             subtitle = '".$_POST['subtitle']."',
             category = '".$_POST['category']."',
             seo = '".$_POST['seo']."',
-            content = '".$_POST['content']."'
+            content = '".$_POST['content']."',
+            slug = '".$slug."'
             
             WHERE id = '".$_POST['article_id']."'
             
@@ -47,6 +48,13 @@ class ArticleManager extends Manager
     {
         $pdo = $this->getPDO();
         $stmt = $pdo->query("SELECT * FROM article WHERE id = '".$article_id."' AND slug = '".$slug."'");
+        return $stmt->fetch(PDO::FETCH_ASSOC);
+    }
+    
+    public function getArticleWithID($article_id)
+    {
+        $pdo = $this->getPDO();
+        $stmt = $pdo->query("SELECT * FROM article WHERE id = '".$article_id."'");
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }

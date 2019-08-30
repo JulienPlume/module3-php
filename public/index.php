@@ -53,10 +53,10 @@ if ($_SERVER['REQUEST_URI'] == '/module3-php/') {
     $controller = new AddArticleController();
     $controller->AddArticle();
     
-} else if ($_SERVER['REQUEST_URI'] == '/module3-php/edit') {
+} else if (preg_match('#/module3-php/edit/article/([0-9]+)$#', $_SERVER['REQUEST_URI'], $matches)) {
     require_once("../controller/EditArticleController.php");
     $controller = new EditArticleController();
-    $controller->edit();
+    $controller->edit($matches);
 
 } else if ($_SERVER['REQUEST_URI'] == '/module3-php/logout') {
     require_once("../controller/LogoutController.php");
