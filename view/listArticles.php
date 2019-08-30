@@ -8,7 +8,7 @@
         <h1>listing des articles</h1>
 
         <?php foreach ($articles as $article): ?>
-            <h2><a href="http://localhost:8888/module3-php/view_article?article_id=<?= $article['id'] ?>"><?= $article['title'] ?></a></h2>
+            <h2><a href="http://localhost:8888/module3-php/article/<?= $article['slug'] ?>/<?= $article['id'] ?>"><?= $article['title'] ?></a></h2>
             <div><?= $article['subtitle'] ?></div>
             <form method="post" action="http://localhost:8888/module3-php/delete">
                 <input type="hidden" name="article_id" value="<?= $article['id'] ?>">

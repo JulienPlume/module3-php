@@ -13,10 +13,10 @@ class CommentManager extends Manager
             
             ");
     }
-    public function getAll()
+    public function getAll($article_id)
     {
         $pdo = $this->getPDO();
-        $stmt = $pdo->query("SELECT * FROM comment WHERE id_post = '".$_GET['article_id']."'");
+        $stmt = $pdo->query("SELECT * FROM comment WHERE id_post = '".$article_id."'");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

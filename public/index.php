@@ -23,10 +23,10 @@ if ($_SERVER['REQUEST_URI'] == '/module3-php/') {
     $controller = new FlagCommentController();
     $controller->flag();
 
-} else if (preg_match('#/module3-php/view_article\?article_id=[0-9]{1,}$#', $_SERVER['REQUEST_URI'])) {
+} else if (preg_match('#/module3-php/article/([a-z-]+)/([0-9]+)$#', $_SERVER['REQUEST_URI'], $matches)) {
     require_once("../controller/ViewArticleController.php");
     $controller = new ViewArticleController();
-    $controller->view();
+    $controller->view($matches);
 
 
     //ADMIN

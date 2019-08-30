@@ -32,9 +32,9 @@
                 <div>
                     <strong><?= $comment['author'] ?></strong> le <?= $comment['date'] ?>
 
-                                <form method="post" action="http://localhost:8888/module3-php/flag">
-                <input type="hidden" name="comment_id" value="<?= $comment['id'] ?>">
-                <input type="submit" value="flag">
+                <form method="post" action="http://localhost:8888/module3-php/flag">
+                    <input type="hidden" name="comment_id" value="<?= $comment['id'] ?>">
+                    <input type="submit" value="flag">
             
             </form>
                 </div>

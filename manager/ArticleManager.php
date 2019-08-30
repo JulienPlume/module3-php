@@ -1,62 +1,51 @@
 <?php
-
 class ArticleManager extends Manager
 {
     public function add()
     {
         $pdo = $this->getPDO();
-        $stmt = $pdo->query( "INSERT INTO
-        article SET date = NOW(),
-        title = '".$_POST['title']."',
-        subtitle = '".$_POST['subtitle']."',
-        content = '".$_POST['content']."',
-        category = '".$_POST['category']."',
-        seo = '".$_POST['seo']."'
-        ");
-        //$stmt->execute();
-        echo $_POST['title'];
-        echo $_POST['content'];
+        $stmt = $pdo->query("INSERT INTO 
+            article SET 
+            date = NOW(), 
+            title = '".$_POST['title']."', 
+            subtitle = '".$_POST['subtitle']."',
+            category = '".$_POST['category']."',
+            seo = '".$_POST['seo']."',
+            content = '".$_POST['content']."'
+            
+            ");
     }
-
     public function getAll()
     {
         $pdo = $this->getPDO();
-        $stmt = $pdo->query( "SELECT * FROM article");
-
-        return $stmt->fetchAll();
+        $stmt = $pdo->query("SELECT * FROM article");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
     public function delete()
     {
         $pdo = $this->getPDO();
-        $stat = $pdo->query( "DELETE FROM article WHERE id ='".$_POST['article_id']."'");
+        $stmt = $pdo->query("DELETE FROM article WHERE id = '".$_POST['article_id']."'");
     }
-
-        public function edit()
+    public function edit()
     {
         $pdo = $this->getPDO();
-        $stmt = $pdo->query( "UPDATE
-                article
-            SET
-                date = NOW(),
-                title = '".$_POST['title']."',
-                subtitle = '".$_POST['subtitle']."',
-                content = '".$_POST['content']."',
-                category = '".$_POST['category']."',
-                seo = '".$_POST['seo']."'
-        WHERE       
-            id = '".$_POST['article_id']."'
-        ");
-        //$stmt->execute();
-        echo $_POST['title'];
-        echo $_POST['content'];
+        $pdo->query("UPDATE 
+            article SET 
+            date = NOW(), 
+            title = '".$_POST['title']."', 
+            subtitle = '".$_POST['subtitle']."',
+            category = '".$_POST['category']."',
+            seo = '".$_POST['seo']."',
+            content = '".$_POST['content']."'
+            
+            WHERE id = '".$_POST['article_id']."'
+            
+            ");
     }
-
-    public function getArticleWithId($article_id)
+    public function getArticleWithIDandSlug($article_id, $slug)
     {
         $pdo = $this->getPDO();
-        $stmt = $pdo->query( "SELECT * FROM article
-        WHERE id = '".$article_id."'");
-
+        $stmt = $pdo->query("SELECT * FROM article WHERE id = '".$article_id."' AND slug = '".$slug."'");
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
