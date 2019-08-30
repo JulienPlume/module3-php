@@ -7,39 +7,17 @@
     <a href="http://localhost:8888/module3-php/login">login interface</a>
         <h1>listing des articles</h1>
 
-        <?php foreach($articles as $article): ?>
-            <h2>
-            title
-                <?=$article['title']?>
-            </h2>
-            <h2>
-            subtitle
-                <?=$article['subtitle']?>
-            </h2>
-            <h2>
-            content
-                <?=$article['content']?>
-            </h2>
-            <h2>
-            cat
-                <?=$article['category']?>
-            </h2>
-            <h2>
-            seo
-                <?=$article['seo']?>
-            </h2>
+        <?php foreach ($articles as $article): ?>
+            <h2><a href="http://localhost:8888/module3-php/view_article?article_id=<?= $article['id'] ?>"><?= $article['title'] ?></a></h2>
+            <div><?= $article['subtitle'] ?></div>
             <form method="post" action="http://localhost:8888/module3-php/delete">
                 <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
-                <input type="submit" value="delete">
+                <input type="submit" value="Delete">
             </form>
             <form method="post" action="http://localhost:8888/module3-php/edit">
                 <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
-                <input type="submit" value="EDIT">
+                <input type="submit" value="Edit">
             </form>
-            <form method="post" action="http://localhost:8888/module3-php/view_article">
-                <input type="hidden" name="article_id" value="<?= $article['id'] ?>">
-                <input type="submit" value="VIEW"> 
-            </form>
-            <hr>
-<?php endforeach; ?>
+        <?php endforeach; ?>
     </body>
+</html>

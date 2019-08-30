@@ -16,25 +16,7 @@ class CommentManager extends Manager
     public function getAll()
     {
         $pdo = $this->getPDO();
-        $stmt = $pdo->query("SELECT * FROM comment WHERE id_post = '".$_POST['article_id']."'");
-        return $stmt->fetchAll(PDO::FETCH_ASSOC);
-    }
-    public function flag()
-    {
-        $pdo = $this->getPDO();
-        $stmt = $pdo->query( "UPDATE
-                comment
-            SET
-                flag = 1
-        WHERE       
-            id = '".$_POST['comment_id']."'
-        ");
-    }
-
-    public function getFlagged()
-    {
-        $pdo = $this->getPDO();
-        $stmt = $pdo->query("SELECT * FROM comment WHERE flag=1");
+        $stmt = $pdo->query("SELECT * FROM comment WHERE id_post = '".$_GET['article_id']."'");
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
 }

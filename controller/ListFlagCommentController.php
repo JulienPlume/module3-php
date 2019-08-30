@@ -1,5 +1,5 @@
 <?php
-class FlagCommentController
+class ListFlagCommentController
 {
 
 
