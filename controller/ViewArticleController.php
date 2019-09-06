@@ -18,7 +18,9 @@ class ViewArticleController
                 }
             }
             if ($c == 0) {
-                $comment_manager->add();
+                if ($validator->minimum2($_POST['author'])) {
+                    $comment_manager->add();
+                }
             }
         }
         if (isset($_POST['signal_comment'])) {
