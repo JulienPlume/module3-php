@@ -8,6 +8,11 @@ class ViewArticleController
         if (isset($_POST['submit_comment'])) {
             $comment_manager->add();
         }
+        if (isset($_POST['signal_comment'])) {
+            $comment_manager->signalComment($_POST['comment_id']);
+            $message_signaled_comment =  "The comment has been signaled";
+        }
+        
         $article = $manager->getArticleWithIDandSlug($matches[2], $matches[1]);
         if ($article == false) {
             exit('Article does not exist');
