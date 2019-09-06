@@ -10,13 +10,13 @@ class LoginController
             $manager = new UserManager();
             $user = $manager->getUser();
             if (!$user) {
-                echo "login error";
+                echo "wrong login or password";
             } else {
                 if (password_verify($_POST['password'], $user['password'])) {
 
                     $_SESSION['auth'] = $user;
                     header('location: /module3-php/admin');
-                } else echo "password not ok";
+                } else echo "wrong login or password";
             }
         }
 require("../view/login.php");
