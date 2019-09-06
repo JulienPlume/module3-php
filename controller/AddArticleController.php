@@ -27,7 +27,7 @@ class AddArticleController
             $manager->add($slug);
 
             header('location: /module3-php/');
-
+            }
         }
         require("../view/addArticle.php");
     }
