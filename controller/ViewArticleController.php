@@ -36,4 +36,5 @@ class ViewArticleController
             require("../view/viewArticle.php");
         }
     }
+    
 }
