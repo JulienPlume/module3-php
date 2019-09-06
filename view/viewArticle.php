@@ -33,7 +33,7 @@
                     <?= $message_signaled_comment ?>
                 </div>
             <?php endif; ?>
-            
+
             <?php foreach ($comments as $comment): ?>
                 <div>
                     <strong><?= $comment['author'] ?></strong> le <?= $comment['date'] ?>
@@ -45,7 +45,7 @@
             </form>
                 </div>
                 <div>
-                    <?= $comment['content'] ?>
+                    <?= htmlspecialchars($comment['content']) ?>
                 </div>
                 <div>
                     <form method="post">
