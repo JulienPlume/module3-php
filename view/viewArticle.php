@@ -4,29 +4,30 @@
     </head>
     <body>
         <h1>Voici l'article selectionné</h1>
-
+<div class="article">
             <h2>
-            title
                 <?=$article['title']?>
             </h2>
-            <h2>
+            <h3>
             subtitle
                 <?=$article['subtitle']?>
-            </h2>
-            <h2>
-            content
-                <?=$article['content']?>
-            </h2>
-            <h2>
-            cat
-                <?=$article['category']?>
-            </h2>
-            <h2>
-            seo
-                <?=$article['seo']?>
-            </h2>
-            <hr>
+            </h3>
+            <h4>
 
+                <?=$article['date']?>
+            </h4>
+            <h4>
+                <?=$article['content']?>
+            </h4>
+            <h5>
+                post in category <?=$article['category']?>
+            </h5>
+            <h5>
+            keyword(s): <?=$article['seo']?>
+            </h5>
+            </div>
+            <hr>
+<div class="comments">
             <?php
             if(isset($message_signaled_comment)): ?>
                 <div style="background: forestgreen;">
@@ -64,4 +65,5 @@
                     <input type="submit" name="submit_comment" value="Add a comment">
             
                 </form>
+            </div>
     </body>

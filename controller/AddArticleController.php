@@ -2,7 +2,11 @@
 class AddArticleController
 {
     public function AddArticle(){
-
+        if (!isset($_SESSION['auth'])) {
+            $_SESSION['access_denied'] = 'You need to be login to access in the admin area';
+            header('location: /module3-php/login');
+        } 
+        
         // get
        if (isset($_POST['submit'])) {
             $to_check = [
@@ -13,19 +17,19 @@ class AddArticleController
                 'content',
             ];
             $c = 0;
-            $validator = new Validator();
+
             foreach ($to_check as $item) {
-                if(!$validator->notEmpty($_POST[$item])) {
+                if(!Validator::notEmpty($_POST[$item])) {
                     $c++;
                 }
             }
             if ($c == 0) {
                 $slugify = new Slugify();
-                $slug    = $slugify->slug($_POST['title']);
+                $slug = $slugify->slug($_POST['title']);
 
-            $manager = new ArticleManager();
-            $manager->add($slug);
-
+                $manager = new ArticleManager();
+                $manager->add($slug);
+                
             header('location: /module3-php/');
             }
         }

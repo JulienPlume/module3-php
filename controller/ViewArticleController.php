@@ -11,14 +11,14 @@ class ViewArticleController
                 'comment',
             ];
             $c = 0;
-            $validator = new Validator();
+
             foreach ($to_check as $item) {
-                if(!$validator->notEmpty($_POST[$item])) {
+                if(!Validator::notEmpty($_POST[$item])) {
                     $c++;
                 }
             }
             if ($c == 0) {
-                if ($validator->minimum2($_POST['author'])) {
+                if (Validator::minimum2($_POST['author'])) {
                     $comment_manager->add();
                 }
             }
@@ -36,5 +36,5 @@ class ViewArticleController
             require("../view/viewArticle.php");
         }
     }
-    
+
 }

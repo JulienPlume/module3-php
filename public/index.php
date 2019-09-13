@@ -1,5 +1,5 @@
 <?php
-
+// phpinfo();
 
 require "../manager/Manager.php";
 require "../manager/ArticleManager.php";

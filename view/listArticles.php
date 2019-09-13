@@ -1,11 +1,11 @@
 <!DOCTYPE html>
     <head>
-        <title>List articles</title>
+        <title>HOME PHP-MODULE3</title>
     </head>
     <body>
     <a href="http://localhost:8888/module3-php/admin">admin interface</a>
     <a href="http://localhost:8888/module3-php/login">login interface</a>
-        <h1>listing des articles</h1>
+        <h1>homepage</h1>
 
         <?php foreach ($articles as $article): ?>
             <h2><a href="http://localhost:8888/module3-php/article/<?= $article['slug'] ?>/<?= $article['id'] ?>"><?= $article['title'] ?></a></h2>
