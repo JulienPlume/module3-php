@@ -1,4 +1,5 @@
 ### 💎 Recommandations 💎
+
 Best practice to install the last version of this project is to use github:
 
 `git clone https://github.com/JulienPlume/module3-php.git`
@@ -6,9 +7,12 @@ Best practice to install the last version of this project is to use github:
 - do not hesitate to check newest version with:
 `git pull`
 
+
+
+
 ### How to launch it 🚀
 
-####prerequirements :
+#### prerequirements :
 - **PHP >5.6.**38
 	- **Windows:** 
 		- WAMP
@@ -18,19 +22,26 @@ Best practice to install the last version of this project is to use github:
 	- **LINUX**
 		- LAMP
 
+
 #### Import database
  take it from */assets/DB/forteroche.sql*
+
 
 #### set your local server
 use your favorite terminal :
 `php -S localhost:8888 -t public`
 
+
 #### visualize the projet in your webbrowser 
 
 http://localhost:8888/module3-php/
 
+
+
 ### Tips 🤙
+
 - The current admin account is
+
 
 | User  | password |
 | ------------- | ------------- |
@@ -38,7 +49,10 @@ http://localhost:8888/module3-php/
 > click on the top right lock to access to the login interface
 
 
+
 - admin functions are available directly accross the blog navigation to edit or delete articles
+
+
 
 
 
