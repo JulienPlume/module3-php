@@ -9,3 +9,4 @@ class DeleteArticleController
         header('location: /module3-php/');
     }
 }
+

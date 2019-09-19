@@ -15,5 +15,7 @@ class FlagCommentController
         $manager->getFlagged();
 
         // header('location: /module3-php/');
+        
     }
 }
+

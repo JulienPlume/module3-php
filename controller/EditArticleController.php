@@ -8,8 +8,8 @@ class EditArticleController
 
         // var_dump($article);
         // die;
-
-        if (isset($_POST['save_button'])) {
+        if (isset($_POST['save_button']))
+        {
 
             $slugify = new Slugify();
             $slug = $slugify->slug($_POST['title']);
@@ -18,8 +18,9 @@ class EditArticleController
             header('location: /module3-php/');
         }
 
-
-        require("../view/editArticle.php");
+        require ("../view/editArticle.php");
         // header('location: /module3-php/');
+        
     }
 }
+

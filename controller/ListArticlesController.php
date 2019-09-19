@@ -1,5 +1,4 @@
 <?php
-
 class ListArticlesController
 {
     public function listArticles()
@@ -7,9 +6,9 @@ class ListArticlesController
         $manager = new ArticleManager();
         $articles = $manager->getAll();
         $view = new View();
-        $view->generateView('listArticles.php', [
-            'articles' => $articles,
-        ]);
+        $view->generateView('listArticles.php', ['articles' => $articles, ]);
         #require("../view/listArticles.php");
+        
     }
 }
+

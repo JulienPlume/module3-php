@@ -15,14 +15,7 @@ class ArticleManager extends Manager
             slug = ?
         
         ");
-        $stmt->execute([
-            $_POST['title'],
-            $_POST['subtitle'],
-            $_POST['category'],
-            $_POST['seo'],
-            $_POST['content'],
-            $slug
-        ]);
+        $stmt->execute([$_POST['title'], $_POST['subtitle'], $_POST['category'], $_POST['seo'], $_POST['content'], $slug]);
     }
     public function getAll()
     {
@@ -34,9 +27,7 @@ class ArticleManager extends Manager
     {
         $pdo = $this->getPDO();
         $stmt = $pdo->prepare("DELETE FROM article WHERE id = ?");
-        $stmt->execute([
-            $_POST['article_id'],
-        ]);
+        $stmt->execute([$_POST['article_id'], ]);
     }
     public function edit($slug)
     {
@@ -54,38 +45,24 @@ class ArticleManager extends Manager
             WHERE id = ?
             
             ");
-        $stmt->execute([
-            $_POST['title'],
-            $_POST['subtitle'],
-            $_POST['category'],
-            $_POST['seo'],
-            $_POST['content'],
-            $slug,
-            $_POST['article_id'],
-        ]);
+        $stmt->execute([$_POST['title'], $_POST['subtitle'], $_POST['category'], $_POST['seo'], $_POST['content'], $slug, $_POST['article_id'], ]);
     }
 
-    
     public function getArticleWithIDandSlug($article_id, $slug)
     {
         $pdo = $this->getPDO();
         $stmt = $pdo->prepare("SELECT * FROM article WHERE id = ? AND slug = ?");
-        $stmt->execute([
-            $article_id,
-            $slug,
-        ]);
+        $stmt->execute([$article_id, $slug, ]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
-
 
     public function getArticleWithID($article_id)
     {
         $pdo = $this->getPDO();
         $stmt = $pdo->prepare("SELECT * FROM article WHERE id = ?");
-        $stmt->execute([
-            $article_id,
-        ]);
-        $stmt = $pdo->query("SELECT * FROM article WHERE id = '".$article_id."'");
+        $stmt->execute([$article_id, ]);
+        $stmt = $pdo->query("SELECT * FROM article WHERE id = '" . $article_id . "'");
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }
+
