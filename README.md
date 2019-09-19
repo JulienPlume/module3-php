@@ -1,26 +1,45 @@
-# module3-php
+### 💎 Recommandations 💎
+Best practice to install the last version of this project is to use github:
+
+`git clone https://github.com/JulienPlume/module3-php.git`
+
+- do not hesitate to check newest version with:
+`git pull`
+
+### How to launch it 🚀
+
+####prerequirements :
+- **PHP >5.6.**38
+	- **Windows:** 
+		- WAMP
+
+	- **OSX**
+		- MAMP
+	- **LINUX**
+		- LAMP
+
+#### Import database
+ take it from */assets/DB/forteroche.sql*
+
+#### set your local server
+use your favorite terminal :
+`php -S localhost:8888 -t public`
+
+#### visualize the projet in your webbrowser 
+
+http://localhost:8888/module3-php/
+
+### Tips 🤙
+- The current admin account is
+
+| User  | password |
+| ------------- | ------------- |
+| jean  | admin123  |
+> click on the top right lock to access to the login interface
 
 
-dev command: 
-php -S localhost:8888 -t public
+- admin functions are available directly accross the blog navigation to edit or delete articles
 
 
 
-algo de cryptage: Bcrypt
-
-si volonté de crypter depuis le projet: password_hash()
-
-on se protege des injections sql en préparant la requete sql. 
-
-on doit empecher les requetes sql d'acceuillir des variables, les utilisateurs pourraient utiliser la faille pour envoyer leurs propres commandes sql.
-
-XSS -> htmlspecialchar() empeche l'injection de html ou javascript via les inputs 
-
-
-
-
-parler du workflow, des contraintes, demonstration du fonctionnement, présentation du code en partant de public / expliquer le router, c'est le FRONT CONTROLLER qui contient principalement le routeur grace à l'url qui permet d'appeler le bon controller. 
-Presentation d'un des controllers ex: listarticlesController. explication ud manager, le role du controller est de retourner la vue à la fin. 
-Il y a un manager par Model. Chaque manager à les requetes concernant les models.
-
-Requetes préparées -> 
+**2019 - Julien**

@@ -37,7 +37,7 @@
 
             <?php foreach ($comments as $comment): ?>
                 <div class="text-muted">
-                    <strong class="text-primary"><?= $comment['author'] ?></strong> le <?= $comment['date'] ?>
+                    <strong class="text-primary"><?= htmlspecialchars($comment['author']) ?></strong> le <?= $comment['date'] ?>
                 </div>
                 <div>
                     <?= htmlspecialchars($comment['content']) ?>
