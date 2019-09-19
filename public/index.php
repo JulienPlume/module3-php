@@ -7,6 +7,7 @@ require "../manager/CommentManager.php";
 require "../manager/UserManager.php";
 require "../services/Slugify.php";
 require "../services/Validator.php";
+require "../services/View.php";
 
     session_start();
 

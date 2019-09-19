@@ -1,21 +1,29 @@
-<!DOCTYPE html>
-    <head>
-        <title>Auth page</title>
-    </head>
+
     <body>
         <h1>Identification</h1>
 
 
         <?php if (isset($_SESSION['access_denied'])): ?>
             <div style="color: red;">
-                <?= $_SESSION['access_denied'] ?>
-                <?php unset($_SESSION['access_denied']); ?>
+                {# <?= $_SESSION['access_denied'] ?>
+                <?php unset($_SESSION['access_denied']); ?> #}
             </div>
         <?php endif; ?>
-        
-        <form method="post">
-            <input type="text" name="username" placeholder="username">
-            <input type="text" name="password" placeholder="password">
-        <input type="submit" name="submit" value="login">
-        </form>
+        <div class="popup">
+
+            <form method="post">
+                <input type="text" class="form-control" name="username" placeholder="username">
+                <input type="password" class="form-control" name="password" placeholder="password">
+                <input type="submit" class="btn btn-primary button" name="submit" value="login">
+            </form>
+        </div>
     </body>
+    <style>
+    .popup{
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+    }
+    .button{
+        width: 100%;
+    }</style>

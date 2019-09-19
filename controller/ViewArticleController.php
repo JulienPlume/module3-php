@@ -5,6 +5,7 @@ class ViewArticleController
     {
         $manager = new ArticleManager();
         $comment_manager = new CommentManager();
+        $message_signaled_comment = null;
         if (isset($_POST['submit_comment'])) {
             $to_check = [
                 'author',
@@ -33,7 +34,12 @@ class ViewArticleController
             exit('Article does not exist');
         } else {
             $comments = $comment_manager->getAll($matches[2]);
-            require("../view/viewArticle.php");
+            $view = new View();
+            $view->generateView("viewArticle.php", [
+                'article' => $article,
+                'comments' => $comments,
+                '$message_signaled_comment' => $message_signaled_comment,
+            ]);
         }
     }
 

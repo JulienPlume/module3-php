@@ -18,6 +18,11 @@ class AdminController
         }
         $comments_to_moderate = $comment_manager->getSignaledComments();
 
-        require "../view/admin.php";
+        // require "../view/admin.php";
+                $view = new View();
+        $view->generateView('admin.php', [
+            // 'comment_id' => $comment_id,
+            'comments_to_moderate' => $comments_to_moderate
+        ]);
     }
 }

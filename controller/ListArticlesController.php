@@ -6,6 +6,10 @@ class ListArticlesController
     {
         $manager = new ArticleManager();
         $articles = $manager->getAll();
-        require("../view/listArticles.php");
+        $view = new View();
+        $view->generateView('listArticles.php', [
+            'articles' => $articles,
+        ]);
+        #require("../view/listArticles.php");
     }
 }

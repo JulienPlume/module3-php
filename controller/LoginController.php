@@ -19,7 +19,10 @@ class LoginController
                 } else echo "wrong login or password";
             }
         }
-require("../view/login.php");
+// require("../view/login.php");
+        $view = new View();
+        $view->generateView('login.php', [
+        ]);
     }
     
 }

@@ -64,6 +64,8 @@ class ArticleManager extends Manager
             $_POST['article_id'],
         ]);
     }
+
+    
     public function getArticleWithIDandSlug($article_id, $slug)
     {
         $pdo = $this->getPDO();
@@ -74,6 +76,8 @@ class ArticleManager extends Manager
         ]);
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+
+
     public function getArticleWithID($article_id)
     {
         $pdo = $this->getPDO();

@@ -33,6 +33,11 @@ class AddArticleController
             header('location: /module3-php/');
             }
         }
-        require("../view/addArticle.php");
+        // require("../view/addArticle.php");
+                $view = new View();
+        $view->generateView('addArticle.php', [
+            // 'comment_id' => $comment_id,
+            // 'comments_to_moderate' => $comments_to_moderate
+        ]);
     }
 }

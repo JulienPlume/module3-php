@@ -1,18 +1,18 @@
 <!DOCTYPE html>
     <head>
-        <title>List articles</title>
+    <meta name="description" content="<?=$article['subtitle']?> - <?=$article['category']?>">
+        <title>Jean Forteroche - <?=$article['title']?></title>
     </head>
     <body>
-        <h1>Voici l'article selectionné</h1>
+        <h1>Selected Article</h1>
 <div class="article">
-            <h2>
+            <h2 class="text-primary">
                 <?=$article['title']?>
             </h2>
-            <h3>
-            subtitle
+            <h3 class="text-secondary">
                 <?=$article['subtitle']?>
             </h3>
-            <h4>
+            <h4 class="articleDate">
 
                 <?=$article['date']?>
             </h4>
@@ -27,7 +27,7 @@
             </h5>
             </div>
             <hr>
-<div class="comments">
+<div class="commentSection">
             <?php
             if(isset($message_signaled_comment)): ?>
                 <div style="background: forestgreen;">
@@ -36,10 +36,8 @@
             <?php endif; ?>
 
             <?php foreach ($comments as $comment): ?>
-                <div>
-                    <strong><?= $comment['author'] ?></strong> le <?= $comment['date'] ?>
-          
-            </form>
+                <div class="text-muted">
+                    <strong class="text-primary"><?= $comment['author'] ?></strong> le <?= $comment['date'] ?>
                 </div>
                 <div>
                     <?= htmlspecialchars($comment['content']) ?>
@@ -48,22 +46,42 @@
                     <form method="post">
                         <input type="hidden" name="comment_id" value="<?= $comment['id'] ?>">
                         <?php if(!$comment['approved']): ?>
-                        <input type="submit" value="Signal" name="signal_comment">
+                        <input type="submit" value="signal" name="signal_comment" class="btn btn-sm btn-outline-danger" style="outline:o;">
                         <?php endif; ?>
                     </form>
                 </div>
                 <hr>
             <?php endforeach; ?>
 
+<div class="card">
 
-            <h2>add a comment!</h2>
-                <form method="post">
-                    <input type="text" name ="author" value="">
-                    <input type="hidden" name ="article_id" value="<?= $article['id']?>">
-                    <h3>comment : </h3>
-                    <textarea name="comment" id="" cols="30" rows="10" class=""></textarea>
-                    <input type="submit" name="submit_comment" value="Add a comment">
-            
-                </form>
+    <div class="card-header">add a comment!</div>
+    <div class="card-body">
+    <form method="post">
+        <input type="text" name ="author" value="" placeholder="nickname">
+        <input type="hidden" name ="article_id" value="<?= $article['id']?>">
+        <textarea name="comment" id="" cols="10" rows="1" class="form-control" placeholder="content"></textarea>
+        <input type="submit" class="btn btn-outline-info" name="submit_comment" value="Add a comment">
+        
+    </form>
+</div>
+</div>
             </div>
     </body>
+    <style>
+
+    .articleDate{
+        font-size: smaller;
+        opacity:0.4;
+    color: yellow
+    }
+    p{
+        background-color: initial !important
+        }
+        .commentSection{
+            width:50%;
+ margin : 0 auto;
+        }
+    .card{
+margin-bottom: 68px;
+    }</style>
