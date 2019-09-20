@@ -3,7 +3,8 @@ class Slugify
 {
     public function slug($title)
     {
-        $slug = str_replace(' ', '-', $title);
+        $forbiddenChars = array(" ","é", "&", ".", ",", "<", ">","'","#","%", "{","}","|","^",",","~","[","]","`",")",";","/","?",":","@","=","&" );
+        $slug = str_replace($forbiddenChars, '-', $title);
         $slug = strtolower($slug);
         return $slug;
     }
