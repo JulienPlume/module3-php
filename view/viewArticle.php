@@ -54,7 +54,7 @@
          <div class="card-header">Add your comment!</div>
          <div class="card-body">
             <form method="post">
-               <input type="text" name ="author" value="" placeholder="nickname">
+               <input type="text" name ="author" value=""  class="form-control" placeholder="nickname">
                <input type="hidden" name ="article_id" value="<?= $article['id']?>">
                <textarea name="comment" id="" cols="10" rows="1" class="form-control" placeholder="content"></textarea>
                <input type="submit" class="btn_add btn btn-outline-info" name="submit_comment" value="Add a comment">
