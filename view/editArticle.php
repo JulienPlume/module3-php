@@ -10,10 +10,10 @@
 </head>
 <body>
    <div class="content">
-      <h1 class="title">Human was built for evolve.. This article too <br> 🦖☄️</h1>
+      <h1 class="title">Human have been made for evolve.. This article too <br> 🦖☄️</h1>
       <form method="post">
          <div>
-         ,<input type="hidden" name="article_id" value="<?=$article['id']?>">
+         <input type="hidden" name="article_id" value="<?=$article['id']?>">
             <input class="form-control" type="text" name="title" value="<?=$article['title']?>" placeholder="the title">
          </div>
          <div>
