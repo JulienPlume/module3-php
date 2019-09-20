@@ -23,7 +23,7 @@ class CommentManager extends Manager
     public function getNoHidden($article_id)
     {
         $pdo = $this->getPDO();
-        $stmt = $pdo->prepare("SELECT * FROM comment WHERE id_post = ? AND hidden = 0");
+        $stmt = $pdo->prepare("SELECT * FROM comment WHERE id_post = ?, hiddden < 1 ");
         $stmt->execute([$article_id, ]);
         return $stmt->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -48,7 +48,7 @@ class CommentManager extends Manager
     public function hiddenComment($comment_id)
     {
         $pdo = $this->getPDO();
-        $stmt = $pdo->prepare("UPDATE comment SET hidden = 1, signaled = 0 WHERE id = ?");
+        $stmt = $pdo->prepare("UPDATE comment SET hiddden = 1, signaled = 0, id_post = 0 WHERE id = ?");
         $stmt->execute([$comment_id, ]);
     }
 }
