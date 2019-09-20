@@ -4,7 +4,7 @@ Best practice to install the last version of this project is to use github:
 
 `git clone https://github.com/JulienPlume/module3-php.git`
 
-- do not hesitate to check newest version with:
+- do not hesitate to check if newest version is available with:
 `git pull`
 
 

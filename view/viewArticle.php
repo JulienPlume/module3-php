@@ -51,13 +51,13 @@
       <hr>
       <?php endforeach; ?>
       <div class="card">
-         <div class="card-header">add a comment!</div>
+         <div class="card-header">Add your comment!</div>
          <div class="card-body">
             <form method="post">
                <input type="text" name ="author" value="" placeholder="nickname">
                <input type="hidden" name ="article_id" value="<?= $article['id']?>">
                <textarea name="comment" id="" cols="10" rows="1" class="form-control" placeholder="content"></textarea>
-               <input type="submit" class="btn btn-outline-info" name="submit_comment" value="Add a comment">
+               <input type="submit" class="btn_add btn btn-outline-info" name="submit_comment" value="Add a comment">
             </form>
          </div>
       </div>
@@ -78,5 +78,8 @@
    }
    .card{
    margin-bottom: 68px;
+   }
+   .btn_add{
+      width: 100%;
    }
 </style>

@@ -37,7 +37,8 @@
    .article{
    /* width: 60%; */
    background-color: rgba(255,255,255,.1);
-   margin-bottom: 20px;
+   margin: 10px;
+   padding: 20px;
    }
    .flexAdminBtn{
    display: flex;
