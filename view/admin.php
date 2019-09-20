@@ -10,7 +10,7 @@
    <h2 class="text-primary">Comments to moderate</h2>
    <div class="moderateSection">
       <table class="table table-hover">
-         <tr class="text-info">
+         <tr class="text-info table-dark">
             <th>Date</th>
             <th>Comment</th>
             <th>Actions</th>
@@ -29,6 +29,7 @@
             </td>
          </tr>
          <?php endforeach; ?>
+         <tr class="table-dark"><td colspan="3">&nbsp;</td></tr>
       </table>
    </div>
 </body>
