@@ -1,5 +1,5 @@
 <head>
-   <title>HOME PHP-MODULE3</title>
+   <title>Jean Forteroche - Billet simple pour l'Alaska</title>
 </head>
 <body>
    <h1>homepage</h1>

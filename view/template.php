@@ -64,5 +64,6 @@
    width: 90%;
    margin: 0 auto;
    margin-top: 48px;
+      margin-bottom: 48px;
    }
 </style>

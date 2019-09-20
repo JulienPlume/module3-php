@@ -18,7 +18,8 @@ class EditArticleController
             header('location: /module3-php/');
         }
 
-        require ("../view/editArticle.php");
+                $view = new View();
+        $view->generateView('editArticle.php', ['article' => $article, ]);
         // header('location: /module3-php/');
         
     }

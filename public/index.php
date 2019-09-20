@@ -87,7 +87,6 @@ else if ($_SERVER['REQUEST_URI'] == '/module3-php/logout')
 }
 else
 {
-    echo "test";
     header('location: /module3-php/');
 }
 

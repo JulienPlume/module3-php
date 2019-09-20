@@ -8,7 +8,7 @@ class Validator
 
     public static function minimum2($string)
     {
-        return strlen($string) >= 3;
+        return strlen($string) >= 2;
     }
 
 }
