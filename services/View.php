@@ -3,6 +3,7 @@ class View
 {
     public function generateView($file_content_name, array $arguments)
     {
+        
         $content = $this->getContent($file_content_name, $arguments);
         require ("../view/template.php");
     }

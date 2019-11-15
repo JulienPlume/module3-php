@@ -31,7 +31,7 @@ else if ($_SERVER['REQUEST_URI'] == '/module3-php/flag')
     $controller->flag();
 
 }
-else if (preg_match('#/module3-php/article/([a-z-]+)/([0-9]+)$#', $_SERVER['REQUEST_URI'], $matches))
+else if (preg_match('#/module3-php/article/([a-z-0-9]+)/([0-9]+)$#', $_SERVER['REQUEST_URI'], $matches))
 {
     require_once ("../controller/ViewArticleController.php");
     $controller = new ViewArticleController();

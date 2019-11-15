@@ -3,6 +3,7 @@ class ViewArticleController
 {
     public function view($matches)
     {
+       
         $manager = new ArticleManager();
         $comment_manager = new CommentManager();
         $message_signaled_comment = null;
@@ -28,16 +29,18 @@ class ViewArticleController
             $comment_manager->signalComment($_POST['comment_id']);
             $message_signaled_comment =  "The comment has been signaled";
         }
-
+        $metaTitle = 'oui';
         $article = $manager->getArticleWithIDandSlug($matches[2], $matches[1]);
         if ($article == false) {
             exit('Article does not exist');
         } else {
+             
             $comments = $comment_manager->getAll($matches[2]);
             $view = new View();
             $view->generateView("viewArticle.php", [
                 'article' => $article,
                 'comments' => $comments,
+                'metaTitle' => $metaTitle,
                 '$message_signaled_comment' => $message_signaled_comment,
             ]);
         }
