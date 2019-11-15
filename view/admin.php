@@ -1,8 +1,3 @@
-<!DOCTYPE html>
-<head>
-   <title>admin interface</title>
-</head>
-<body>
    <h1>
       hello admin !
    </h1>
@@ -32,11 +27,3 @@
          <tr class="table-dark"><td colspan="3">&nbsp;</td></tr>
       </table>
    </div>
-</body>
-<style>
-   .moderateSection{
-   width:50%;
-   margin : 0 auto;
-   }
-   .btn{width:100%;}
-</style>

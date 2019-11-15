@@ -1,4 +1,3 @@
-<body>
    <h1>Identification</h1>
    <?php if (isset($_SESSION['access_denied'])): ?>
    <div style="color: red;">
@@ -13,14 +12,3 @@
          <input type="submit" class="btn btn-primary button" name="submit" value="login">
       </form>
    </div>
-</body>
-<style>
-   .popup{
-   position: absolute;
-   top: 50%; left: 50%;
-   transform: translate(-50%, -50%);
-   }
-   .button{
-   width: 100%;
-   }
-</style>

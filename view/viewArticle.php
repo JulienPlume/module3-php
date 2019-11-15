@@ -1,9 +1,3 @@
-<!DOCTYPE html>
-<head>
-   <meta name="description" content="<?=$article['subtitle']?> - <?=$article['category']?>">
-   <title>Jean Forteroche - <?=$article['title']?></title>
-</head>
-<body>
    <h1>Selected Article</h1>
    <div class="article">
       <h2 class="text-primary">
@@ -61,25 +55,5 @@
             </form>
          </div>
       </div>
-   </div></div>
-</body>
-<style>
-   .articleDate{
-   font-size: smaller;
-   opacity:0.4;
-   color: yellow
-   }
-   p{
-   background-color: initial !important
-   }
-   .commentSection{
-   width:50% !important;
-   margin: 0 auto;
-   }
-   .card{
-   margin-bottom: 68px;
-   }
-   .btn_add{
-      width: 100%;
-   }
-</style>
+   </div>
+   </div>
